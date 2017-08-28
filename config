@@ -155,8 +155,8 @@ bar {
         status_command i3status
         tray_output primary
 }
-# mod by myself
-# power control
+#==>mod by myself
+#====>power manager
 set $mode_system lock(L) logout(O) reboot(R) shutdown(S) exit(Esc)
 bindsym $mod+c mode "$mode_system"
 mode "$mode_system" {
@@ -166,8 +166,9 @@ mode "$mode_system" {
   bindsym s exec --no-startup-id systemctl poweroff, mode "default"
   bindsym Escape mode "default"
 }
-#add ibus input
-exec --no-startup-id export GTK_IM_MODULE=ibus
-exec --no-startup-id export XMODIFIERS=@im=ibus
-exec --no-startup-id export QT_IM_MODULE=ibus
-exec --no-startup-id export ibus-daemon --xim -d -r
+#====>change border style
+  bindsym $mod+u border none
+  bindsym $mod+n border normal
+  bindsym $mod+o border 1pixel
+  bindsym $mod+b border toggle
+
